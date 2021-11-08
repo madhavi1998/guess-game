@@ -1,0 +1,23 @@
+<script>
+generated_num = Math.floor(Math.random()*101);
+
+for(i=1;i<=10;i++){
+num = parseInt(prompt("Guess a number"));
+
+	if(generated_num<num){
+	alert("Your entered number is greater than generated number");
+	}
+	
+	else if(generated_num>num){
+	alert("Your entered number is smaller than generated number");
+	}
+	
+	if(generated_num==num){
+	alert("Congratulation!!! You win the game");
+	break;
+}}
+
+if(i==11){
+alert("You are out of trial");
+}
+</script>
