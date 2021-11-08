@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Guess a number game</title>
+    <style>
+        h1 {
+            color: lemonchiffon;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            text-align: center;
+            background-color: darkslategrey;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        marquee {
+            font-size: 45px;
+            color: lemonchiffon;
+            background-color: darkslategrey;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(79, 110, 110);">
+
+    <h1>How To Start This Game:</h1>
+    <p>Just click the link below. Follow the intructon that are going to pop up.</p>
+    <hr />
+    <h1>How To Win This Game:</h1>
+    <p>To win this game your entered number must match with the genereted number.</p>
+    <hr />
+    <h1>Rules</h1>
+    <p onclick="performOperation">1) You have 10 trials to win the game.<br />2) You have to enter any number from 1 to 100.<br />3) If you run out
+        of trials it means you lose the game then you can restart this game.</p>
+        <button onclick="performOperation()" >Try </button>
+    <marquee behavior="scroll" direction="right" scrollamount="19">Guess a number</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="19">Let's begin this game</marquee>
+
+</body>
+<script>
+    function performOperation() {
+
+        generated_num = Math.floor(Math.random() * 101);
+
+        for (i = 1; i <= 10; i++) {
+            num = parseInt(prompt("Guess a number"));
+
+            if (generated_num < num) {
+                alert("Your entered number is greater than generated number");
+            }
+
+            else if (generated_num > num) {
+                alert("Your entered number is smaller than generated number");
+            }
+
+            if (generated_num == num) {
+                alert("Congratulation!!! You win the game");
+                break;
+            }
+        }
+
+        if (i == 11) {
+            alert("You are out of trial");
+        }
+    }
+
+</script>
+
+</html>
